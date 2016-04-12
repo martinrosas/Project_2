@@ -13,9 +13,9 @@ class CommentsController < ApplicationController
 
   def create
   @comment = Comment.new(params.require(:comment).permit(:content, :user_id, :movie_id))
-
+  @comment.user = current_user
   if @comment.save
-    redirect_to comments_path
+    redirect_to movie_path(@comment.movie)
   else
     render :new
   end

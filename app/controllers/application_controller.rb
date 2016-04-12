@@ -8,9 +8,14 @@ class ApplicationController < ActionController::Base
      # Make the current_user method available to views, not just controllers!
     helper_method :current_user
 
-    def current_user
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  def current_user
+    @current_user ||= begin
+      User.find(session[:user_id]) if session[:user_id]
+    rescue
+      session[:user_id] = nil
+      nil
     end
+  end
 
     # Other code above
     def authorize

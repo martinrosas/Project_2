@@ -5,6 +5,7 @@ end
 
   def show
   @movie = Movie.find(params[:id])
+  @comment = @movie.comments.build
 end
 
   def new
@@ -32,7 +33,7 @@ end
     redirect_to movies_path
   else
     render :edit
-  end 
+  end
   end
   def destroy
     @movie = Movie.find(params[:id])
