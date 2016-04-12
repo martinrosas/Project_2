@@ -4,6 +4,8 @@ class UsersController < ApplicationController
     @comments = @user.comments
   end
 
+  
+
   def new
     @user = User.new
   end

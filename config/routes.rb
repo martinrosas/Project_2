@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'movies#index'
   resources :users, except: [:index, :destroy]
   resources :movies
-
+  resources :comments
 
   resources :sessions, only: [:new, :create, :destroy]
 
