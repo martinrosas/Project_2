@@ -1,11 +1,17 @@
-<h1>Movie List</h1>
 
+<h1>Movie List</h1>
+Hello
 <ul>
     <% @movies.each do |movie| %>
         <li>
             <strong> <%= movie.title %> </strong> - <%= movie.description %> </strong> - <%= movie.runtime %> </strong> - <%= movie.genre %>
             <%= link_to "More info", movie_path(movie) %>
-
+<!-- <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+      <div class="col-lg-10">
+        <textarea class="form-control" rows="3" id="textArea"></textarea>
+        <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+      </div> -->
 
 
         </li>

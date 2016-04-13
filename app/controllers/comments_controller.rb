@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
-  # before_action :set_comment, only: [:show, :edit, :update, :destroy]
-  # before_action :authorize, except: [:index, :show]
-  # before_action :only_my_comments, only: [:edit, :update, :destroy]
+  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, except: [:index, :show]
+  before_action :only_my_comments, only: [:edit, :update, :destroy]
 
   def index
   @comments = Comment.all
@@ -48,18 +48,20 @@ class CommentsController < ApplicationController
   # redirect_to comments_path
   end
 
-  # private
+  private
 
-  #  def set_comment
-  #     @comment = Comment.find(params[:id])
-  #     @comment.user = current_user
-  #   end
+   def set_comment
+      @comment = Comment.find(params[:id])
 
+    end
 
+    def comment_params
+      params.require(:comment).permit(:content)
+    end
 
-  #  def only_my_comments
-  #     redirect_to root_path, notice: "you can't edit someone elses comments" if (current_user != @comment.user)
-  #   end
+   def only_my_comments
+      redirect_to root_path, notice: "you can't edit someone elses comments" if (current_user != @comment.user)
+    end
 
 
 
