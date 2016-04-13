@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @comments = @user.comments
   end
 
-  
+
 
   def new
     @user = User.new
@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    puts @user
     if @user.save
       flash[:notice] = "You have successfully signed up!"
       session[:user_id] = @user.id
