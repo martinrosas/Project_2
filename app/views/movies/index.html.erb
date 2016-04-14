@@ -6,7 +6,7 @@
 
   <% @movies.each do |movie| %>
 
-
+<div class="col-md-6">
      <%= image_tag movie.image_url%></br><strong><%= movie.title %> - <%= movie.description %> - <%= movie.runtime %> min</strong> - <%= movie.genre %>
       <%= link_to "Rate this Movie!", movie_path(movie) %></br>
       <!-- <button type="button" class="btn btn-primary"></button> -->
@@ -16,6 +16,6 @@
         <textarea class="form-control" rows="3" id="textArea"></textarea>
         <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
       </div> -->
-
+</div>
   <% end %>
 
