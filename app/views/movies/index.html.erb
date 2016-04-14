@@ -1,11 +1,15 @@
+<h1>Your Average Movie Critic</h1>
 
-<h1>Movie List</h1>
-Hello
-<ul>
-    <% @movies.each do |movie| %>
-        <li>
-            <strong> <%= movie.title %> </strong> - <%= movie.description %> </strong> - <%= movie.runtime %> </strong> - <%= movie.genre %>
-            <%= link_to "More info", movie_path(movie) %>
+</br>
+<h2>Movie List</h2>
+
+
+  <% @movies.each do |movie| %>
+
+
+     <%= image_tag movie.image_url%></br><strong><%= movie.title %> - <%= movie.description %> - <%= movie.runtime %> min</strong> - <%= movie.genre %>
+      <%= link_to "Rate this Movie!", movie_path(movie) %></br>
+      <!-- <button type="button" class="btn btn-primary"></button> -->
 <!-- <div class="form-group">
       <label for="textArea" class="col-lg-2 control-label">Textarea</label>
       <div class="col-lg-10">
@@ -13,9 +17,5 @@ Hello
         <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
       </div> -->
 
-
-        </li>
-    <% end %>
-</ul>
-
+  <% end %>
 

@@ -5,7 +5,6 @@ end
 
   def show
   @movie = Movie.find(params[:id])
-  @comment = @movie.comments.build
 end
 
   def new

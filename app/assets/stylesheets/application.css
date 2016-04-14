@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+
+ h1 {
+  text-align: center
+ }
+
+.movie
+{
+text-align: center;
+}
+
+.bubble
+{
+position: relative;
+width: 295px;
+height: 120px;
+padding: 0px;
+background: #FFA07A;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+
+.bubble:after
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 16px 23px 16px 0;
+border-color: transparent #FFA07A;
+display: block;
+width: 0;
+z-index: 1;
+left: -23px;
+top: 44px;
+}
+

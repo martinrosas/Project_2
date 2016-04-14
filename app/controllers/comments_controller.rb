@@ -4,7 +4,11 @@ class CommentsController < ApplicationController
   before_action :only_my_comments, only: [:edit, :update, :destroy]
 
   def index
-  @comments = Comment.all
+    if current_user
+      @comments = current_user.comments
+    else
+     @comments = Comment.all
+    end
   end
 
   def show
