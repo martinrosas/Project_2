@@ -1,4 +1,9 @@
-<h1>Your Average Movie Critic</h1>
+
+<div class="page-header">
+  <h1>Your Average Movie Critic<small>...the place where your opinion <i>kinda</i> matters</small></h1>
+</div>
+
+
 
 </br>
 <h2>Movie List</h2>
@@ -6,9 +11,10 @@
 
   <% @movies.each do |movie| %>
 
-<div class="col-md-6">
-     <%= image_tag movie.image_url%></br><strong><%= movie.title %> - <%= movie.description %> - <%= movie.runtime %> min</strong> - <%= movie.genre %>
-      <%= link_to "Rate this Movie!", movie_path(movie) %></br>
+<div class="col-md-6 movie-container">
+     <%= image_tag movie.image_url%></br><p class="text"><strong><%= movie.title %> - <%= movie.description %> - <%= movie.runtime %> min</strong> - <%= movie.genre %>
+      <%= link_to "Rate this Movie!", movie_path(movie) %></p></br>
+
       <!-- <button type="button" class="btn btn-primary"></button> -->
 <!-- <div class="form-group">
       <label for="textArea" class="col-lg-2 control-label">Textarea</label>

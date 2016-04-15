@@ -26,13 +26,15 @@ text-align: center;
 .bubble
 {
 position: relative;
-width: 295px;
+width: 700px;
 height: 120px;
 padding: 0px;
+left: 60px;
 background: #FFA07A;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
+-webkit-border-radius: 16px;
+-moz-border-radius: 16px;
+border-radius: 16px;
+border: #FF6F38 solid 5px;
 }
 
 .bubble:after
@@ -40,12 +42,43 @@ border-radius: 10px;
 content: '';
 position: absolute;
 border-style: solid;
-border-width: 16px 23px 16px 0;
+border-width: 15px 31px 15px 0;
 border-color: transparent #FFA07A;
 display: block;
 width: 0;
 z-index: 1;
-left: -23px;
-top: 44px;
+left: -31px;
+top: 21px;
+}
+
+.bubble:before
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 19px 35px 19px 0;
+border-color: transparent #FF6F38;
+display: block;
+width: 0;
+z-index: 0;
+left: -40px;
+top: 17px;
+}
+
+.text {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.comments {
+  padding: 7px;
+}
+
+.login {
+  padding: 10px;
+}
+
+.signup {
+  padding: 10px;
 }
 

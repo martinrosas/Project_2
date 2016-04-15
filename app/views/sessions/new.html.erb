@@ -1,17 +1,25 @@
+
 <h1>Login</h1>
 
 <%= form_tag sessions_path do %>
     <% flash.each do |key, msg| %>
         <div><%= msg %></div>
     <% end %>
+
+
 <div class="login">
     <%= label_tag :email %>
     <%= text_field_tag :email, params[:email] %>
 
+</br>
+</br>
+
     <%= label_tag :password %>
     <%= password_field_tag :password %>
-</div>
 
 
     <%= submit_tag "Log in" %>
 <% end %>
+</div>
+<!-- <div class="login"> -->
+<!-- </div> -->

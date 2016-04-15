@@ -2,23 +2,26 @@
 <div class="movie">
 <%= image_tag @movie.image_url%>
 </div>
+<div class="container-fluid">
 
-<article>Movie Info: <%= @movie.description %></br> Runtime: <%= @movie.runtime %>min</br>  Genre: <%= @movie.genre %></br>
-</br>Your average critic reviews for <%= @movie.title %></article>
+<b>Movie Info: <%= @movie.description %> </br> Runtime: <%= @movie.runtime %> min</br>  Genre: <%= @movie.genre %></br>
+
+</br>Your average critic reviews for <%= @movie.title %><i>(400 characters max)</i>
+
 <ul>
 <% @movie.comments.each do |comment| %>
 <div class="bubble">
-<li>
+<div class="comments">
 <%= comment.content %> - <%= comment.user.name if comment.user && comment.user.name %>
 <% if current_user && current_user==comment.user %>
-  </br><%= link_to "Edit this comment", edit_comment_path(comment) %>
-  </br><%= link_to "Delete this Comment", "/comments/#{comment.id}", method: :delete, data: { confirm: "Are you sure you want to delete this comment?"} %>
+  <%= link_to "Edit this comment", edit_comment_path(comment) %>
+  <%= link_to "Delete this Comment", "/comments/#{comment.id}", method: :delete, data: { confirm: "Are you sure you want to delete this comment?"} %>
 <% end %>
-
-</li>
+</div>
 </div></br>
 <%end%>
 </ul>
+</b>
 
 <%= form_for @movie.comments.build do |f| %>
  <%= f.hidden_field :movie_id %>
@@ -35,4 +38,5 @@
 
 <%= link_to "Back to Movie list!", movies_path %>
 
+</div>
 
