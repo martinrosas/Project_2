@@ -18,8 +18,9 @@ Once done, Now
 
 4.Create db and migrate schema(run these commands in your console)
 
-a.rake db:create
-b.rake db:migrate
+ a.rake db:create
+
+ b.rake db:migrate
 
 5.Now run your application(run this command)
 
