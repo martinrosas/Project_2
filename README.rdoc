@@ -23,7 +23,7 @@ b.rake db:migrate
 
 5.Now run your application(run this command)
 
-a. rails s
+ a. rails s
 
 
 Unsolved problems, etc.
