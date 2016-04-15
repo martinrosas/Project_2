@@ -28,4 +28,8 @@ Once done, Now
 
 
 Unsolved problems, etc.
+ Allow users to see all of their comments with time stamps
+ Created a rating system from 1-5 stars.
+ Create a search bar
+ Download movies from an API so I wouldn't have to seed them manually
 
